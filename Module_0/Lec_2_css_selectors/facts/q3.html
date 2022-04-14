@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<style>
+    /* div>p>span */
+    /* children selector */
+    div>p> {
+        color: blue;
+    }
+    div>span>p>span{
+        color: red;
+    }
+    /* or 
+     div>span{
+        color: red;
+    } would also work because
+      it will catch the structure of the tags
+     */
+</style>
+
+<body>
+    <!-- select "I am the direct son" 
+        and make it blue -->
+    <!-- select "I am the indirect son" 
+        and make it red -->
+
+    <div>
+        <p>
+            <span>I am the direct son</span>
+        </p>
+    </div>
+    <div>
+        <span>
+            <p>
+                <span> I am the indirect Son </span>
+            </p>
+        </span>
+    </div>
+</body>
+
+</html>

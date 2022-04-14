@@ -1,0 +1,100 @@
+/* basic resets */
+
+body {
+
+    margin: 0 1rem 0 1rem;
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    /* to remove underline in anchor*/
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+li {
+    list-style: none;
+    /* to remove dot in front of li element*/
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: red;
+}
+
+a:active {
+    color: red;
+}
+
+.main-img {
+    width: 100%;
+    height: auto;
+}
+
+header {
+    display: flex;
+    /* manages space horizontally */
+    justify-content: space-between;
+    /* manages space vertically */
+    align-items: center;
+}
+
+header h1{
+ margin-left: 2rem;
+}
+nav{
+    margin-right: 1rem;
+}
+
+ul {
+    display: flex;
+    width: 20rem;
+    justify-content: space-evenly;
+}
+
+ul>li {
+    width: 30%;
+    font-size: 1.5rem;
+}
+
+
+.footer_parent {
+    height: 5rem;
+    background-color: black;
+    /* it is used to perfectly center a div */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_content {
+    /* boldness */
+    font-weight: 700;
+    font-size: 1.5rem;
+    /* enforces uppercase */
+    text-transform: uppercase;
+    color: white;
+}
+
+.parent {
+    margin-top: 2rem;
+    display: flex;
+    /* text inside that parent includes image will be centered */
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.child {
+    width: 30%;
+}

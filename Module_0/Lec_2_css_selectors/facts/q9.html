@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+
+<style>
+    input[value="Select Me"] {
+        background-color: brown;
+    }
+    h1[myattr="hello"]{
+        color: royalblue;
+    }
+    h1[class="manav"]{
+        color: purple;
+    }
+    p[kunal="manav"]{
+        color: purple;
+    }
+    * {
+        color: red;
+    }
+</style>
+
+<body>
+    
+    <!-- attributes(key value pairs on the 
+        left side of the element) -->
+        <!-- form input -->
+   
+    <input type="button" value="Select Me">
+
+    
+      <h1>Hello</h1>
+      <form action="#" name="MyForm" onsubmit="clickMe()">
+          <input type="text" value="2" name="test" />
+        <input type="submit"  value="Click Me">
+      </form>
+      <h1 myattr="hello">mera khud ka attr</h1>
+      <p kunal="manav" > hello manav!!!!!!!!!!!!!!!</p>  
+      <h1 class="manav">hello manav</h1>
+    <script>
+        function clickMe(event) {
+            // event.preventDefault();
+            console.log(document.MyForm.test.value);
+            console.log("hi")
+        }
+    </script>
+</body>
+</html>

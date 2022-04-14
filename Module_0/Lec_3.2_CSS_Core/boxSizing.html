@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<style>
+    body{
+        background-color: lightgreen;
+    }
+    h1{
+        /* kis type ka font chahiye */
+        font-family: sans-serif;
+        color: white;
+        text-align: center;
+    }
+    .one{
+        border: 2px solid blue;
+        height: 4rem;
+        width: 4rem;
+        background-color: lightcyan;
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+    /* height width-> given by user = visible height width */
+    .border-box{
+        box-sizing: border-box;
+    }
+    .with-nothing{
+        padding: 0px;
+        border: 0px;
+    }
+
+</style>
+
+<body>
+    <h1>Hello Box Sizing</h1>
+    
+    <div class="one" >1</div>
+    <div class="one border-box" >1</div>
+    <div class="one with-nothing" >1</div>
+
+</body>
+</html>

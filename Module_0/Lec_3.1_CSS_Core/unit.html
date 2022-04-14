@@ -1,0 +1,70 @@
+<html>
+<!-- 
+    px -> absolute
+    vh, vw -> with respect to browser or height
+    100vh-> full height of browser screen
+    100vw -> full width of browser screen
+
+    1 rem-> 1 rem =html font font-size
+    perecentage -> that is w.r.t to parent(absolute value) 
+-->
+
+
+<style>
+    html {
+        /* control html size from here */
+        font-size: 30px;
+    }
+
+    .one,
+    .two,
+    .three {
+        /* px is an absolute unit */
+        border: 1px solid red;
+    }
+
+    .one {
+        /* view height, view width */
+        background-color: lightblue;
+        /* browser screen -> 50%width */
+        /* 100vw -> screen width */
+        width: 50vw;
+        /* 40 % of browser height */
+        height: 40vh;
+    }
+
+    .two {
+        height: 5rem;
+        width: 300px;
+    }
+
+    .three {
+        height: 5rem;
+        width: 8rem;
+    }
+    .child {
+        background-color: lightcoral;
+        height: 50%;
+        width: 50%;
+    }
+
+    .grand-child{
+        height: 50%;
+        background-color: lightgray;
+        border: 1px silver solid;
+        width: 50%;
+    }
+</style>
+
+<body>
+    <div class="one">I am div1.</div>
+    <div class="two">
+        i am parent
+        <div class="child">i am child
+            <div class="grand-child">i am grand child</div>
+        </div>
+    </div>
+    <div class="three">hello 3rd div</div>
+</body>
+
+</html>
