@@ -1,6 +1,6 @@
 -- ALTER COMMANDS
     --columns -> add, remove, rename
-        -- ADD
+        -- COLUMNS
             -- add column
                 ALTER TABLE employee
                 ADD COLUMN email VARCHAR(50) NOT NULL;
@@ -21,3 +21,25 @@
                         
                 ALTER TABLE employee
                 DROP COLUMN dob;
+
+        -- multiple remove 
+                ALTER TABLE employee
+                        
+                DROP COLUMN ManagerFName;
+                DROP COLUMN dob;
+
+        -- rename column
+                ALTER TABLE employee
+                RENAME COLUMN JOB To designation;
+
+    -- constraints -> add, remove, modify
+            -- add
+                ALTER TABLE employee
+                CHANGE COLUMN EmpCode EmpCode INT(4) UNIQUE NOT NULL;
+
+                ALTER TABLE employee
+                CHANGE COLUMN salary salary FLOAT;
+
+            -- remove /MODIFY
+                ALTER TABLE employee
+                CHANGE COLUMN DEPTCODE DEPTCODE INT(3);
