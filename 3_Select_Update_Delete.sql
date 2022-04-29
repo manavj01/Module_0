@@ -5,13 +5,13 @@
             SELECT EmpCode,EmpFName,EmpLName FROM employee;
 
             -- SELECT with multiple clauses
-            SELECT column OR* FROM TABLENAME
+            SELECT column or * FROM TABLENAME
             -- WHERE -> for putting conditions
             SELECT * FROM employee
             WHERE salary>2000;
                 -- WHERE manager code =7566;
             SELECT EmpFName,EmpLName,DEPTCODE FROM employee
-            WHERE ManagerCode==7566;
+            WHERE ManagerCode=7566;
             -- GROUP BY -> 
             -- HAVEING
             -- ORDER BY
@@ -76,3 +76,38 @@
     SELECT DEPTCODE, MIN(salary),EmpFName,EmpLName FROM employee
     GROUP BY DEPTCODE
     HAVING MIN(commission>2000);
+
+    -- GROUP BY and HAVING examples
+
+    SELECT designation , sum(salary) as SUM_OF_SALARY  from employee GROUP BY designation;
+
+
+SELECT count(ManagerCode), designation 
+from employee 
+GROUP BY designation 
+ORDER BY count(ManagerCode) DESC;
+
+SELECT year(HireDate) as year, COUNT(EmpCode)
+FROM employee
+Group BY year(HireDate);
+
+SELECT designation, AVG(salary) as AVG_SALARY
+FROM employee
+group by designation 
+HAVING AVG(salary)>2000;
+
+SELECT ManagerCode , SUM(salary) as total
+FROM employee
+GROUP BY ManagerCode
+HAVING sum(salary) >2000;
+
+SELECT designation , count(*) as dept_count
+FROM employee
+WHERE designation != "MANAGER"
+GROUP BY designation
+HAVING count(*) >2;
+
+SELECT designation , count(*) as emp_count
+from employee
+GROUP BY designation 
+HAVING AVG(salary) >2000; 
