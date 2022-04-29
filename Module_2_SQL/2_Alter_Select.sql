@@ -72,8 +72,9 @@
             SELECT EmpCode,EmpFName,EmpLName FROM employee;
 
             -- SELECT with multiple clauses
-            SELECT column OR* FROM TABLENAME
-            -- WHERE -> for putting conditions
+                --SELECT column or * FROM TABLENAME
+            
+                -- WHERE -> for putting conditions
             SELECT * FROM employee
             WHERE salary>2000;
             -- GROUP BY -> 
