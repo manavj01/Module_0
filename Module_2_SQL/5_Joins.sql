@@ -5,8 +5,8 @@
 
 -- 4 types of joins
 -- i)   Common data (intersection) -> INNER JOIN
--- ii)  Left Table DATA -> LEFT OUTER JOIN
--- iii) RIght Table DATA -> RIGHT OUTER JOIN
+-- ii)  Left Table DATA + MATCHING part of right side -> LEFT OUTER JOIN
+-- iii) RIght Table DATA + MATCHING part of left side-> RIGHT OUTER JOIN
 -- iv)  BOTH TABLE DATA -> FULL OUTER JOIN (HYPOTHETICAL- doesnt exist in MYSQL)
 
 CREATE TABLE DEPARTMENT
@@ -26,4 +26,14 @@ INSERT INTO DEPARTMENT VALUES (10, 'FINANCE', 'EDINBURGH'),
 
 SELECT * FROM employee
 INNER JOIN department ON
+employee.DEPTCODE = department.DEPTCODE;
+
+SELECT employee.DEPTCODE , 
+department.DeptName, 
+department.LOCATION , 
+employee.EmpFName, 
+employee.EmpLName 
+FROM department
+INNER JOIN employee ON 
+-- on which column you need comparision
 employee.DEPTCODE = department.DEPTCODE;
