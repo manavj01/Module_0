@@ -1,10 +1,13 @@
-
+// HOW TO RUN FILE
+// 1. right click on the file
+// 2. open in integral terminal 
+// 3. in terminal type : node <filename>.js
 // print
 console.log("hello");
 
 //declare variables
-//java -> statically typed language-> type of variable and val of variable
-//dynamically typed language
+// java -> statically typed language-> type of variable and val of variable
+// javascript - dynamically typed language - only declare variable- can put any value in that
 let a;
 //default value is undefined
 //integer
@@ -13,11 +16,14 @@ a = 10.1;
 //boolean
 a = true;
 //string
+// no char only string and no diff b/w single quotes and double 
 a = "hello";
-a = 'i am same'
+a = 'i am same as double quote'
 //null
 a = null;
-console.log(a);
+console.log("value of a is -",a);
+
+// undefined , null , number , strings, boolean -> PRIMITIVE TYPES
 
 //print 1 to 10
 // for (let i = 1; i <= 10; i++) {
