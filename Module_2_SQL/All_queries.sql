@@ -124,3 +124,111 @@ from employee
 GROUP BY designation 
 HAVING AVG(salary) >2000; 
 
+SELECT designation, COUNT(*) as "no. of employee" , MAX(salary) FROM employee
+GROUP BY designation;
+
+SELECT designation , 
+COUNT(*) as "no. of emp per dept",
+Max(salary) as "Max Salary" 
+FROM employee
+WHERE DEPTCODE <> 20
+GROUP BY designation;
+
+SELECT designation , 
+COUNT(*) as "no. of emp per dept",
+Max(salary) as "Max Salary" 
+FROM employee
+WHERE designation <> "SALESMAN"
+GROUP BY designation;
+
+SELECT  DEPTCODE,AVG(salary) , COUNT(DEPTCODE)
+FROM employee
+GROUP BY DEPTCODE
+HAVING COUNT(DEPTCODE)>2
+ORDER BY AVG(salary) ;
+
+CREATE TABLE DEPARTMENT
+(
+   DEPTCODE   INT(10) PRIMARY KEY ,
+   DeptName   VARCHAR(15) UNIQUE,
+   LOCATION VARCHAR(33) NOT NULL
+);
+
+INSERT INTO DEPARTMENT VALUES (10, 'FINANCE', 'EDINBURGH'),
+                              (20,'SOFTWARE','PADDINGTON'),
+                              (30, 'SALES', 'MAIDSTONE'),
+                              (40,'MARKETING', 'DARLINGTON'),
+                              (50,'ADMIN', 'BIRMINGHAM');
+
+SELECT * FROM employee
+INNER JOIN department ON
+employee.DEPTCODE = department.DEPTCODE;
+
+SELECT employee.DEPTCODE , 
+department.DeptName, 
+department.LOCATION , 
+employee.EmpFName, 
+employee.EmpLName 
+FROM department
+INNER JOIN employee ON 
+employee.DEPTCODE = department.DEPTCODE;
+
+SELECT * FROM employee
+-- and while selecting from employee make a inner join with department
+INNER JOIN DEPARTMENT
+ON employee.DEPTCODE=DEPARTMENT.DEPTCODE;
+
+SELECT employee.DEPTCODE, department.DEPTCODE as depcode , 
+employee.email, department.LOCATION
+FROM department
+INNER JOIN employee
+ON DEPARTMENT.DEPTCODE = employee.DEPTCODE;
+
+SELECT employee.DEPTCODE as EDEPTCODE, 
+department.DEPTCODE ,
+employee.EmpFName, 
+department.LOCATION
+FROM employee
+LEFT JOIN department
+ON  employee.DEPTCODE= DEPARTMENT.DEPTCODE;
+
+CREATE TABLE cust(
+    cid INTEGER NOT NULL UNIQUE,
+    phNO INTEGER NOT NULL UNIQUE,
+    name VARCHAR(255) NOT NULL,
+    PRIMARY KEY(cid)
+);
+
+INSERT INTO cust VALUES(1,911,"MANAV");
+
+CREATE TABLE ORDERS(
+    oid INTEGER NOT NULL UNIQUE,
+    pName VARCHAR(255) NOT NULL,
+    cid INTEGER,
+
+     FOREIGN KEY(cid) REFERENCES cust(cid)
+);
+
+INSERT INTO orders VALUES(2,"pen",1);
+
+INSERT INTO orders VALUES(3,"pencil",3);
+
+DELETE FROM cust
+WHERE cid=1;
+
+DROP TABLE ORDERS;
+
+CREATE TABLE orders(
+    oid INTEGER NOT NULL UNIQUE,
+    pName VARCHAR(255) NOT NULL,
+    cid INTEGER,
+
+    FOREIGN KEY(cid) REFERENCES cust(cid) ON UPDATE CASCADE ON DELETE CASCADE
+ );
+ 
+ INSERT INTO ORDERS VALUES(2, "pencil", 1);
+ INSERT INTO cust VALUES(2, 100, "JASBIR");
+ INSERT INTO ORDERS VALUES(4,"eraser",2);
+ 
+ DELETE FROM CUST WHERE cid=1;
+ 
