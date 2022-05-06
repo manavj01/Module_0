@@ -94,6 +94,3 @@ names.shift();
 console.log("------------------");
 console.log(names);
 
-//slice and splice
-
-//indexof and includes
